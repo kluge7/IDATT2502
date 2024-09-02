@@ -30,8 +30,8 @@ class LinearRegressionModel:
 model = LinearRegressionModel()
 
 # Optimize: adjust W and b to minimize loss using stochastic gradient descent
-optimizer = torch.optim.Adam([model.W, model.b], lr=0.005)  # Further reduced learning rate
-for epoch in range(5000):
+optimizer = torch.optim.Adam([model.W, model.b], lr=0.0001)  # Further reduced learning rate
+for epoch in range(50000):
     optimizer.zero_grad()
     loss_value = model.loss(x_train, y_train)
     loss_value.backward()  # Compute loss gradients
@@ -62,3 +62,4 @@ plt.xlabel('x')
 plt.ylabel('y')
 plt.legend()
 plt.show()
+

@@ -1,6 +1,7 @@
 import torch
 import matplotlib.pyplot as plt
 import numpy as np
+from torch import nn
 from mpl_toolkits.mplot3d import Axes3D
 
 # Load the data
@@ -11,7 +12,7 @@ x_train = torch.tensor(data[:, 0], dtype=torch.float32).reshape(-1, 1)
 y_train = torch.tensor(data[:, 1], dtype=torch.float32).reshape(-1, 1)
 z_train = torch.tensor(data[:, 2], dtype=torch.float32).reshape(-1, 1)
 
-class LinearRegressionModel3D:
+class LinearRegressionModel3D(nn.module):
     def __init__(self):
         # Model variables
         self.W1 = torch.tensor([[0.0]], requires_grad=True)  # Weight for x
