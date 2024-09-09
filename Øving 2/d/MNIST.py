@@ -55,7 +55,7 @@ for epoch in range(num_epochs):
         print(f"Epoch {epoch + 1}/{num_epochs}, Loss: {loss.item()}, Accuracy: {test_accuracy.item() * 100}%")
 
     # Early stopping if accuracy is 90% or higher
-    if test_accuracy.item() >= 0.91:
+    if test_accuracy.item() >= 0.90:
         break
 
 print(f"Final weights and biases: {model.linear.weight.data}, {model.linear.bias.data}")

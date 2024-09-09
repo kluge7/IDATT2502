@@ -12,7 +12,7 @@ x_train = torch.tensor(data[:, 0], dtype=torch.float32).reshape(-1, 1)
 y_train = torch.tensor(data[:, 1], dtype=torch.float32).reshape(-1, 1)
 z_train = torch.tensor(data[:, 2], dtype=torch.float32).reshape(-1, 1)
 
-class LinearRegressionModel3D(nn.module):
+class LinearRegressionModel3D(nn.Module):
     def __init__(self):
         # Model variables
         self.W1 = torch.tensor([[0.0]], requires_grad=True)  # Weight for x
